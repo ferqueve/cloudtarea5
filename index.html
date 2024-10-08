@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura de Cloud Computing para BONARD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="presentation" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide text-center">
+                            <h1 class="animate__animated animate__fadeInDown">Arquitectura de Cloud Computing</h1>
+                            <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Actividad Openstack para BONARD</h2>
+                            <p class="animate__animated animate__fadeIn animate__delay-2s">Fernando Quevedo - Octubre 2024</p>
+                            <p class="mt-4 animate__animated animate__fadeIn animate__delay-3s">Esta presentación detalla la arquitectura de cloud computing diseñada para BONARD, una empresa con múltiples sucursales y necesidades específicas de infraestructura IT.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Componentes y Servicios</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">BONARD requiere una infraestructura compleja que incluye varios componentes clave. En la oficina central, necesitamos:</p>
+                            <ul class="animate__animated animate__fadeInUp animate__delay-2s">
+                                <li><i class="fas fa-server"></i> Servidor de respaldo de archivos: Para garantizar la seguridad de los datos.</li>
+                                <li><i class="fas fa-file-invoice-dollar"></i> Servidor de facturación general: Centraliza todas las operaciones financieras.</li>
+                                <li><i class="fas fa-video"></i> Servidor de cámaras: Para gestionar la seguridad visual de todas las locaciones.</li>
+                                <li><i class="fas fa-users"></i> Servidor de Active Directory: Gestiona usuarios y políticas de acceso.</li>
+                                <li><i class="fas fa-globe"></i> Servidor web: Aloja la página web estática de la empresa.</li>
+                                <li><i class="fas fa-exchange-alt"></i> Servidor FTP: Facilita la transferencia segura de archivos.</li>
+                                <li><i class="fas fa-database"></i> Servidor de base de datos: Almacena y gestiona todos los datos críticos.</li>
+                                <li><i class="fas fa-envelope"></i> Servidor de correo electrónico: Maneja las comunicaciones internas y externas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Diseño en Google Cloud</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">Para implementar esta infraestructura en Google Cloud, aprovecharemos varios servicios clave:</p>
+                            <ul class="animate__animated animate__fadeInUp animate__delay-2s">
+                                <li><i class="fas fa-cloud-upload-alt"></i> Google Cloud Storage: Utilizaremos este servicio para el respaldo de archivos y almacenamiento de videos de las cámaras. Ofrece alta durabilidad y acceso rápido a los datos.</li>
+                                <li><i class="fas fa-calculator"></i> Compute Engine: Para los servidores de facturación, web, y FTP. Estas instancias virtuales nos dan la flexibilidad para configurar los recursos según nuestras necesidades específicas.</li>
+                                <li><i class="fas fa-database"></i> Cloud SQL: Ideal para nuestras bases de datos, ofreciendo alta disponibilidad y fácil escalabilidad.</li>
+                                <li><i class="fas fa-network-wired"></i> VPC (Virtual Private Cloud): Nos permite crear una red privada y segura para todos nuestros servicios, con control total sobre la topología de red.</li>
+                                <li><i class="fas fa-shield-alt"></i> IAM (Identity and Access Management): Crucial para gestionar los accesos y permisos de manera granular en toda nuestra infraestructura cloud.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Implementación por Localización</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">La arquitectura se divide entre la oficina central y las sucursales para optimizar el rendimiento y la gestión:</p>
+                            <div class="row animate__animated animate__fadeInUp animate__delay-2s">
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-building"></i> Central</h4>
+                                    <p>La oficina central albergará los servicios principales, incluyendo el respaldo centralizado, la facturación general, y los servidores críticos como Active Directory y correo electrónico. Esto permite una gestión centralizada y una mayor seguridad para los sistemas críticos.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-store"></i> Sucursales</h4>
+                                    <p>Cada sucursal tendrá servidores locales para facturación, cámaras y bases de datos. Esto mejora la velocidad de acceso a los datos locales y proporciona cierta autonomía. Algunas sucursales también tendrán servidores de relojes para gestión de tiempo específica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Fundamentos de las Decisiones</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">Nuestras decisiones de diseño se basan en varios principios clave:</p>
+                            <ul class="animate__animated animate__fadeInUp animate__delay-2s">
+                                <li><i class="fas fa-expand-arrows-alt"></i> <strong>Escalabilidad:</strong> La arquitectura en Google Cloud permite aumentar o disminuir recursos según las necesidades, asegurando que BONARD pueda crecer sin problemas.</li>
+                                <li><i class="fas fa-shield-alt"></i> <strong>Seguridad integrada:</strong> Utilizamos las herramientas de seguridad de Google Cloud como IAM y VPC para proteger los datos y el acceso a los sistemas.</li>
+                                <li><i class="fas fa-sync"></i> <strong>Resiliencia y alta disponibilidad:</strong> Los servicios de Google Cloud ofrecen redundancia y replicación para minimizar el tiempo de inactividad.</li>
+                                <li><i class="fas fa-coins"></i> <strong>Economía de costos:</strong> El modelo de pago por uso permite optimizar los costos, pagando solo por los recursos que realmente se utilizan.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Tipos de Flavours en Cloud Computing</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">En cloud computing, los "flavours" o tipos de instancias son configuraciones predefinidas de recursos. Para BONARD, consideraremos los siguientes tipos:</p>
+                            <div class="row animate__animated animate__fadeInUp animate__delay-2s">
+                                <div class="col-md-4">
+                                    <h5><i class="fas fa-desktop"></i> General Purpose</h5>
+                                    <p>Equilibrio entre CPU y RAM, ideal para servidores web y aplicaciones ligeras. Usaremos estos para los servidores FTP y web estática de BONARD.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5><i class="fas fa-microchip"></i> Compute Optimized</h5>
+                                    <p>Alta CPU y baja RAM, perfecto para procesamiento intensivo. Recomendado para los servidores de facturación de BONARD, que requieren cálculos frecuentes.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5><i class="fas fa-memory"></i> Memory Optimized</h5>
+                                    <p>Alta RAM y baja CPU, óptimo para bases de datos y análisis en memoria. Utilizaremos estos para los servidores de bases de datos centrales y de sucursales de BONARD.</p>
+                                </div>
+                            </div>
+                            <div class="row animate__animated animate__fadeInUp animate__delay-3s">
+                                <div class="col-md-4">
+                                    <h5><i class="fas fa-hdd"></i> Storage Optimized</h5>
+                                    <p>Alto almacenamiento y E/S, ideal para el servidor de cámaras de BONARD que maneja grandes volúmenes de datos de video.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5><i class="fas fa-tachometer-alt"></i> GPU Optimized</h5>
+                                    <p>Incluye GPUs para procesamiento gráfico. No es necesario para las necesidades actuales de BONARD, pero podría ser útil en el futuro para análisis de video avanzado.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5><i class="fas fa-exchange-alt"></i> High I/O</h5>
+                                    <p>Alto rendimiento de entrada/salida, potencialmente útil para el servidor de base de datos central de BONARD si se requiere un alto volumen de transacciones.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Configuración de Red</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">La configuración de red es crucial para la seguridad y eficiencia de la infraestructura de BONARD. Implementaremos lo siguiente:</p>
+                            <ul class="animate__animated animate__fadeInUp animate__delay-2s">
+                                <li><i class="fas fa-network-wired"></i> <strong>VPC única:</strong> Crearemos una Virtual Private Cloud (VPC) que abarcará toda la infraestructura de BONARD. Esto nos permite tener un control centralizado sobre la red y sus políticas.</li>
+                                <li><i class="fas fa-sitemap"></i> <strong>Subredes por localización:</strong> Dentro de la VPC, configuraremos subredes específicas para la central y cada sucursal. Esto mejora la organización y permite aplicar políticas de seguridad más granulares.</li>
+                                <li><i class="fas fa-shield-alt"></i> <strong>Reglas de firewall específicas:</strong> Implementaremos reglas de firewall para controlar el tráfico entre subredes y hacia/desde Internet. Por ejemplo, limitaremos el acceso a los servidores de base de datos solo desde los servidores de aplicaciones autorizados.</li>
+                                <li><i class="fas fa-route"></i> <strong>Routing entre subredes:</strong> Configuraremos rutas para permitir la comunicación necesaria entre la central y las sucursales, asegurando que los datos fluyan de manera eficiente y segura.</li>
+                                <li><i class="fas fa-lock"></i> <strong>Aislamiento de componentes sensibles:</strong> Utilizaremos grupos de seguridad y ACLs de red para aislar componentes críticos como las bases de datos y los servidores de Active Directory, añadiendo una capa adicional de seguridad.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Seguridad y Monitorización</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">La seguridad y la monitorización son aspectos críticos para proteger los activos digitales de BONARD y garantizar el rendimiento óptimo de la infraestructura:</p>
+                            <ul class="animate__animated animate__fadeInUp animate__delay-2s">
+                                <li><i class="fas fa-user-shield"></i> <strong>IAM para control de acceso:</strong> Utilizaremos Identity and Access Management para gestionar de forma granular quién tiene acceso a qué recursos. Esto es especialmente importante para los servidores críticos como los de facturación y bases de datos.</li>
+                                <li><i class="fas fa-filter"></i> <strong>Reglas de firewall ingress/egress:</strong> Implementaremos reglas estrictas de entrada y salida para controlar el tráfico de red. Por ejemplo, limitaremos el acceso SSH solo a IPs autorizadas y restringiremos el tráfico saliente de los servidores de base de datos.</li>
+                                <li><i class="fas fa-chart-line"></i> <strong>Logging de firewall activado:</strong> Activaremos el logging detallado de las actividades del firewall. Esto nos permitirá auditar el tráfico de red y detectar posibles amenazas o comportamientos anómalos.</li>
+                                <li><i class="fas fa-stream"></i> <strong>VPC Flow Logs:</strong> Habilitaremos VPC Flow Logs para obtener información detallada sobre el tráfico de red. Esto es crucial para el análisis de seguridad, resolución de problemas y optimización del rendimiento de la red.</li>
+                                <li><i class="fas fa-eye"></i> <strong>Monitorización continua:</strong> Implementaremos herramientas de monitorización en tiempo real para supervisar el rendimiento de los servidores, el uso de recursos y la salud general de la infraestructura. Esto nos permitirá detectar y responder rápidamente a cualquier problema.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center min-vh-100">
+                        <div class="content-slide">
+                            <h2 class="animate__animated animate__fadeInDown">Conclusiones y Recomendaciones</h2>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">Basándonos en el análisis y diseño realizado para BONARD, podemos concluir lo siguiente:</p>
+                            <ul class="animate__animated animate__fadeInUp animate__delay-2s">
+                                <li><i class="fas fa-check-circle"></i> <strong>Arquitectura escalable y segura:</strong> La solución propuesta en Google Cloud ofrece a BONARD una infraestructura que puede crecer con la empresa, manteniendo altos estándares de seguridad.</li>
+                                <li><i class="fas fa-cloud"></i> <strong>Aprovechamiento de servicios cloud:</strong> Al utilizar servicios gestionados como Cloud SQL y Cloud Storage, BONARD puede reducir la carga operativa y centrarse en su negocio principal.</li>
+                                <li><i class="fas fa-sync"></i> <strong>Alta disponibilidad y redundancia:</strong> La arquitectura diseñada asegura que los servicios críticos de BONARD estén siempre disponibles, con redundancia incorporada en los componentes clave.</li>
+                                <li><i class="fas fa-chart-line"></i> <strong>Optimización de costos:</strong> El modelo de pago por uso de Google Cloud permite a BONARD optimizar sus gastos en TI, pagando solo por los recursos que realmente utiliza.</li>
+                                <li><i class="fas fa-users-cog"></i> <strong>Gestión centralizada:</strong> Con herramientas como IAM y la VPC unificada, BONARD puede gestionar de manera eficiente su infraestructura distribuida desde un punto central.</li>
+                            </ul>
+                            <p class="animate__animated animate__fadeInUp animate__delay-3s">Recomendamos a BONARD implementar esta arquitectura en fases, comenzando con los servicios críticos y expandiendo gradualmente. Además, es crucial mantener un programa de formación continua para el personal de TI para aprovechar al máximo las capacidades de Google Cloud.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Más diapositivas irán aquí -->
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#presentation" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#presentation" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
